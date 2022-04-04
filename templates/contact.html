@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Italian Cuisine</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{% static 'img/favicon.ico' %}" rel="icon">
+        <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Pacifico' %}" rel="stylesheet"> 
+
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+        <!-- Header Start -->
+        <header id="header">
+            <div class="container">
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/profile">profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/notes">notes</a>
+                        </li>
+                        <li class="menu-active"><a href="{% static 'contact.html' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Reservations Section Start -->
+        <section id="reservations">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Reservations</h3>
+                </header>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="control-group col-sm-3">
+                                <div class="form-group">
+                                    <div class="input-group date" id="date" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#date"/>
+                                        <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group col-sm-3">
+                                <div class="form-group">
+                                    <div class="input-group date" id="time" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" placeholder="Time" data-target="#time"/>
+                                        <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group col-sm-3">
+                                <select class="custom-select">
+                                    <option selected>Party Size</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                    <option value="9">9 People</option>
+                                    <option value="10">10 People</option>
+                                </select>
+                            </div>
+                            <div class="control-group col-sm-3">
+                                <button class="btn btn-block btn-book">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reservations Section End -->
+
+        <!-- Contact Section Start -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Contact Us</h3>
+                </div>
+                
+                <div class="row contact-detail">
+                    <div class="col-md-6">
+                        <div class="contact-col-1">
+                            <div class="contact-hours">
+                                <h4>Opening Hours</h4>
+                                <p>Monday-Friday: 7am to 12am</p>
+                                <p>Saturday: 5pm to 12am</p>
+                                <p>Sunday: 9am to 12am</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-col-2">
+                            <div class="contact-info">
+                                <h4>Contact Info</h4>
+                                <p>4137  State Street, CA, USA</p>
+                                <p><a href="tel:+1-234-567-8900">+1-234-567-8900</a></p>
+                                <p><a href="mailto:info@example.com">info@example.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-map">
+                            <iframe src="{% static 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12623.52751148822!2d-122.47260557388145!3d37.72245039905841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s220%2C+San+Francisco%2C+California%2C+USA!5e0!3m2!1sen!2sbd!4v1555690883913!5m2!1sen!2sbd' %}" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" placeholder="Your Name" required="required" />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="email" class="form-control" placeholder="Your Email" required="required" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Subject" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" placeholder="Message" required="required" ></textarea>
+                                </div>
+                                <div><button type="submit">Send Message</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section End -->
+            
+        <!-- Subscriber Section Start -->
+        <section id="subscriber">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Get Latest Food Info</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Enter Your Email">
+                            </div>
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Subscriber Section end -->
+
+        <!-- Footer Start -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="copyright">
+							<p>&copy; Copyright <a href="">CoffeeCulture</a>. All Rights Reserved</p>
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							<p>Designed By <a href="{% static 'https://htmlcodex.com' %}">HTML Codex</a></p>
+						</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="icon">
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-google"></a></li>
+
+                            <script>
+                                var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?29874';
+                                var s = document.createElement('script');
+                                s.type = 'text/javascript';
+                                s.async = true;
+                                s.src = url;
+                                var options = {
+                              "enabled":true,
+                              "chatButtonSetting":{
+                                  "backgroundColor":"#4dc247",
+                                  "ctaText":"",
+                                  "borderRadius":"25",
+                                  "marginLeft":"0",
+                                  "marginBottom":"50",
+                                  "marginRight":"50",
+                                  "position":"right"
+                              },
+                              "brandSetting":{
+                                  "brandName":"CoffeeCulture",
+                                  "brandSubTitle":"Typically replies within a day",
+                                  "brandImg":"https://cdn.clare.ai/wati/images/WATI_logo_square_2.png",
+                                  "welcomeText":"Hi there!\nHow can I help you?",
+                                  "messageText":"Hello, I have a question about {{page_link}}",
+                                  "backgroundColor":"#0a5f54",
+                                  "ctaText":"Start Chat",
+                                  "borderRadius":"25",
+                                  "autoShow":false,
+                                  "phoneNumber":"6356633872"
+                              }
+                            };
+                                s.onload = function() {
+                                    CreateWhatsappChatWidget(options);
+                                };
+                                var x = document.getElementsByTagName('script')[0];
+                                x.parentNode.insertBefore(s, x);
+                            </script>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/jquery/jquery-migrate.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendor/easing/easing.min.js' %}"></script>
+        <script src="{% static 'vendor/stickyjs/sticky.js' %}"></script>
+        <script src="{% static 'vendor/superfish/hoverIntent.js' %}"></script>
+        <script src="{% static 'vendor/superfish/superfish.min.js' %}"></script>
+        <script src="{% static 'vendor/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendor/tempusdominus/js/moment.min.js' %}"></script>
+        <script src="{% static 'vendor/tempusdominus/js/moment-timezone.min.js' %}"></script>
+        <script src="{% static 'vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+        <!-- Main Javascript File -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+</html>
