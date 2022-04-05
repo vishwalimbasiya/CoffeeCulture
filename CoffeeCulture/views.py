@@ -5,7 +5,10 @@ from django.contrib.auth import logout
 from django.conf import settings
 from django.core.mail import send_mail
 import random
-from twilio.rest import Client
+import requests
+import json
+
+
 
 # Create your views here.
 
@@ -26,17 +29,44 @@ def index(request):
                 send_mail(sub,msg,email_from,to_email)
 
                 #send message
-                client = Client('ACf33c61cd4639b66c052f41ffaf57be62', '1838ed7510903a8617ea0597ad84d7ac')
+                # mention url
+                url = "https://www.fast2sms.com/dev/bulk"
 
-                message = client.messages \
-                .create(
-                     body=f"Hello user,\n your account has been created Successfully,\n your one time password is{otp},\From CoffeeCulture",
-                     from_='+18317049051',
-                     to='+916356633872'
-                 )
 
-                print(message.sid)
-                
+                # create a dictionary
+                my_data = {
+                    # Your default Sender ID
+                    'sender_id': 'FSTSMS',
+                    
+                    # Put your message here!
+                    'message': 'your OTP is {otp}',
+                    
+                    'language': 'english',
+                    'route': 'p',
+                    
+                    # You can send sms to multiple numbers
+                    # separated by comma.
+                    'numbers': '6356633872,7016210249,'	
+                }
+
+                # create a dictionary
+                headers = {
+                    'authorization': 'CeO7nS0PXIzsUgKT51yduojJ8QF3aEmGW4frwL9AhBbZV2HNRq8Wg1XshciEb3NqAFO2Qy4YJrflDBCV',
+                    'Content-Type': "application/x-www-form-urlencoded",
+                    'Cache-Control': "no-cache"
+                }
+
+                # make a post request
+                response = requests.request("POST",
+                                            url,
+                                            data = my_data,
+                                            headers = headers)
+                #load json data from source
+                returned_msg = json.loads(response.text)
+
+                # print the send message
+                print(returned_msg['message'])
+
                 return redirect('notes')
             else:
                 print(signupfrm.errors)
@@ -51,6 +81,9 @@ def index(request):
                 print('Login Successfully!')
                 request.session['user']=unm
                 request.session['userid']=userid.id
+
+                
+                
                 return redirect('notes')
             else:
                 print("Error...Login Fail!")
